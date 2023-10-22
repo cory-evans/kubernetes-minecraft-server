@@ -7,6 +7,8 @@ metadata:
     app: minecraft-server
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: minecraft-server
@@ -36,6 +38,8 @@ spec:
             value: {{ .Values.minecraft.motd }}
           - name: ALLOW_FLIGHT
             value: 'TRUE'
+          - name: MEMORY
+            value: 12G
         ports:
         - containerPort: {{ .Values.minecraft.port }}
           name: minecraft

@@ -4,7 +4,7 @@
 
 # ********REQUIRED********
 node:
-  hostname: 'dell3' # Your kube node's hostname
+  hostname: 'server' # Your kube node's hostname
 # ************************
 
 minecraft:
@@ -13,14 +13,14 @@ minecraft:
   port: 25565
 
 volume:
-  storage: 3Gi
+  storage: 15Gi
   path: '/mnt/local-volumes/minecraft' # Path to wherever you want to save your worldfile
 
 resources:
   limits:
-    memory: 2Gi
+    memory: 16Gi
   requests:
-    memory: 1.5Gi
+    memory: 8Gi
 
 serviceAccount:
   create: true
